@@ -1,0 +1,926 @@
+@font-face {
+    font-family: Moranga;
+    src: url(./Fonts/moranga.ttf);
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(./Fonts/Gilroy-Bold.otf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(./Fonts/Gilroy-Semibold.otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(./Fonts/Gilroy-Medium.otf);
+    font-weight: 500;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "Moranga", "Helvetica Neue", Arial, sans-serif;
+    cursor: default;
+}
+
+*::selection {
+    background-color: #FC626A;
+    color: black;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    background-color: #111;
+    position: relative;
+}
+
+
+/* Navbar code */
+
+
+nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 4px 22px;
+    width: 100%;
+    position: fixed;
+    top: 2vh;
+    overflow: hidden;
+    z-index: 99;
+}
+
+nav > a {
+    font-size: 2.5vw;
+    color: #fff;
+    line-height: 2.4vw;
+    text-decoration: none;
+    width: 10vw;
+}
+
+.resume-btn,
+.resume-btn-prt {
+    z-index: 1111;
+    padding: .9vmax 1.5vmax;
+    border-radius: 5vmax;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: 0 0 0.8vmax #49bff6;
+    box-shadow: 0 0 0.8vmax #49bff6;
+    background: -webkit-gradient(linear, left top, right top, from(#45d6e7), to(#38cdfa));
+    background: -o-linear-gradient(left, #45d6e7, #38cdfa);
+    background: linear-gradient(to right, #45d6e7, #38cdfa);
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    transition: 0.5s all;
+}
+
+.resume-btn a,
+.resume-btn-prt a {
+    font-size: 1.1vmax;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+}
+
+.resume-btn-prt {
+    display: none;
+}
+
+nav svg {
+    height: 5.1vw;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Navbar responsive  */
+
+@media (max-width:600px) {
+
+    nav {
+        padding: 4px 19px;
+    }
+
+    nav > a {
+        font-size: 7vw;
+        line-height: 7vw;
+        width: 30vw;
+    }
+
+    .resume-btn {
+        display: none;
+    }
+
+    nav svg {
+        height: 12.1vw;
+        margin-left: 7.1vw;
+    }
+
+    .resume-btn-prt {
+        padding: .9vmax 1.6vmax;
+        margin-left: -11vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .resume-btn-prt a {
+        font-size: 2.2vmax;
+    }
+
+}
+
+
+
+
+/* ------Page 1 code----- */
+
+
+
+
+
+#page1 {
+    min-height: 100vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+}
+
+#page1 h1 {
+    font-size: 3.7vmax;
+    margin-bottom: 2.3vmax;
+}
+
+#image-div {
+    height: 67vmin;
+    width: 70vmax;
+    overflow: hidden;
+}
+
+#image-div img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    height: 109%;
+    width: 100%;
+}
+
+
+
+
+/* ----Page1 responsive---- */
+
+
+
+
+
+@media (max-width:600px) {
+    #page1 {
+        min-height: 73vh;
+    }
+
+    #page1 h1 {
+        font-size: 4.6vmax;
+        margin-bottom: 2.5vmax;
+    }
+
+    #image-div {
+        height: 45vmax;
+        width: 75vw;
+        margin-bottom: 2vmax;
+    }
+
+    #image-div img {
+        -o-object-position: center;
+        object-position: center;
+        height: 105%;
+    }
+
+}
+
+
+
+/* ------Page2 code------ */
+
+
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 10vh;
+    position: relative;
+}
+
+#name-div {
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: auto;
+    margin-bottom: 13vh;
+    overflow-y: hidden;
+}
+
+#name-div::-webkit-scrollbar {
+    display: none;
+}
+
+#name-div h1 {
+    font-size: 8vw;
+    margin-right: 2vw;
+    display: inline-block;
+}
+
+#intro-div {
+    text-align: center;
+    width: 80%;
+    padding-top: 4vh;
+    padding-bottom: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#intro-div h1 {
+    word-spacing: 0.2vw;
+    letter-spacing: 0.01vw;
+    font-size: 4.4vw;
+    line-height: 1.3;
+    margin-bottom: 1vw;
+}
+
+#intro-div h1 a {
+    text-decoration: underline;
+}
+
+#intro-div h1 span.a {
+    color: #FE7D84;
+}
+
+#intro-div h1 span.b {
+    color: #38cdfa;
+}
+
+#intro-div #prof {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 1.6vmax;
+    margin-top: 3vmax;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* pill buttons (replace the image buttons of the original) */
+
+.pill-link {
+    display: inline-block;
+    padding: 1.1vmax 2.4vmax;
+    border-radius: 5vmax;
+    background: -webkit-gradient(linear, left top, right top, from(#FE7D84), to(#FC626A));
+    background: -o-linear-gradient(left, #FE7D84, #FC626A);
+    background: linear-gradient(to right, #FE7D84, #FC626A);
+    -webkit-box-shadow: 0 0 1vmax rgba(252, 98, 106, 0.6);
+    box-shadow: 0 0 1vmax rgba(252, 98, 106, 0.6);
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.6vmax;
+    color: #fff;
+    cursor: pointer;
+}
+
+.pill-link.alt {
+    background: -webkit-gradient(linear, left top, right top, from(#45d6e7), to(#38cdfa));
+    background: -o-linear-gradient(left, #45d6e7, #38cdfa);
+    background: linear-gradient(to right, #45d6e7, #38cdfa);
+    -webkit-box-shadow: 0 0 1vmax rgba(56, 205, 250, 0.6);
+    box-shadow: 0 0 1vmax rgba(56, 205, 250, 0.6);
+}
+
+
+
+
+/* ----Page2 responsive----- */
+
+
+
+
+@media (max-width:600px) {
+
+    #page2 {
+        padding-top: 2vh;
+    }
+
+    #name-div {
+        margin-bottom: 1vh;
+    }
+
+    #name-div h1 {
+        font-size: 14.6vw;
+    }
+
+    #intro-div {
+        width: 90%;
+        padding-top: 2vh;
+        padding-bottom: 8vh;
+    }
+
+    #intro-div h1 {
+        word-spacing: 0.6vw;
+        font-size: 8.2vw;
+        font-weight: 100;
+        line-height: 11.8vw;
+    }
+
+    #intro-div #prof {
+        gap: 3vmax;
+    }
+
+    .pill-link {
+        padding: 1.5vmax 3.4vmax;
+        font-size: 2.6vmax;
+    }
+
+}
+
+
+
+/* -----Page3 code------ */
+
+
+
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #222;
+    padding: 7vh 5.1vw;
+    position: relative;
+}
+
+#page3 > h3 {
+    font-size: 4.8vmax;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    margin-bottom: 0vmax;
+}
+
+#page3 > h3 span {
+    font-size: 4.8vmax;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    color: #38cdfa;
+}
+
+#page3 > h5 {
+    font-size: 2.2vmax;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    margin-bottom: 1.4vmax;
+}
+
+.box h4 {
+    font-size: 2vmax;
+    border: 2px solid white;
+    display: inline-block;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    color: #fff;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 7px;
+    margin-top: 4vmax;
+    margin-bottom: 1.6vmax;
+}
+
+/* skill chips (replace the logo tiles of the original) */
+
+.chip {
+    display: inline-block;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.6vmax;
+    color: #111;
+    background-color: #fff;
+    padding: 1.1vmax 1.8vmax;
+    margin-right: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.dev-box .chip {
+    border-bottom: 4px solid #38cdfa;
+}
+
+.des-box .chip {
+    border-bottom: 4px solid #FC626A;
+}
+
+.pcb-box .chip {
+    border-bottom: 4px solid #F6BA53;
+}
+
+
+
+/* ----Page3 responsive---- */
+
+
+
+@media (max-width:600px) {
+
+    #page3 {
+        min-height: 67vh;
+        padding: 5vh 5.1vw;
+    }
+
+    #page3 > h3,
+    #page3 > h3 span {
+        font-size: 4.4vmax;
+    }
+
+    #page3 > h5 {
+        font-weight: 500;
+    }
+
+    .box h4 {
+        font-size: 2.1vmax;
+        padding: 5px 9px;
+        margin-bottom: 2vmax;
+    }
+
+    .chip {
+        font-size: 2.1vmax;
+        padding: 1vmax 1.4vmax;
+        margin-right: 5px;
+        border-radius: 5px;
+    }
+
+}
+
+
+
+/* ----Page4 code----- */
+
+
+
+#page4 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(48, 48, 48);
+    position: relative;
+    padding: 5vh 4vw;
+}
+
+#page4 > h2 {
+    font-size: 3.7vmax;
+    font-weight: 600;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+}
+
+#page4 > h2 span {
+    font-size: 3.7vmax;
+    font-weight: 600;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    color: #FC626A;
+}
+
+#page4 > h4 {
+    font-size: 1.85vmax;
+    font-weight: 500;
+    margin-bottom: 3vmax;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* project cards on a white board, like the original work wall */
+
+#work-sample {
+    background-color: #fff;
+    margin-bottom: 4vmax;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6vmax;
+    border-radius: 10px;
+    padding: 2vmax;
+}
+
+#work-sample .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #111;
+    border-radius: 10px;
+    padding: 1.6vmax;
+    -webkit-box-shadow: 1px 7px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 7px 20px rgba(0, 0, 0, 0.4);
+    -webkit-transition: -webkit-transform 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+#work-sample .card:hover {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+    border-color: #38cdfa;
+}
+
+#work-sample .card .tag {
+    align-self: flex-start;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.1vmax;
+    color: #111;
+    background-color: #F6BA53;
+    padding: 0.3vmax 0.9vmax;
+    border-radius: 5vmax;
+    margin-bottom: 1vmax;
+}
+
+#work-sample .card h3 {
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 2vmax;
+    margin-bottom: 0.8vmax;
+}
+
+#work-sample .card p {
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.3vmax;
+    line-height: 1.5;
+    color: #ddd;
+    margin-bottom: 1.2vmax;
+    cursor: pointer;
+}
+
+#work-sample .card .stack {
+    margin-top: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 0.5vmax;
+}
+
+#work-sample .card .stack span {
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1vmax;
+    color: #38cdfa;
+    border: 1px solid #38cdfa;
+    border-radius: 5vmax;
+    padding: 0.25vmax 0.8vmax;
+}
+
+#page4 > a.more-link {
+    display: block;
+    text-align: right;
+    margin-bottom: 3vmax;
+    padding: 0 1vw;
+}
+
+
+
+/* ----page4 responsive---- */
+
+
+
+@media (max-width:900px) {
+    #work-sample {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:600px) {
+
+    #page4 {
+        background-color: #333;
+        padding: 4vh 4.9vw;
+    }
+
+    #page4 > h2,
+    #page4 > h2 span {
+        font-size: 4.4vmax;
+    }
+
+    #page4 > h4 {
+        font-size: 2.1vmax;
+    }
+
+    #work-sample {
+        grid-template-columns: 1fr;
+        margin-bottom: 4.8vmax;
+        padding: 1.5vh;
+        gap: 2vmax;
+    }
+
+    #work-sample .card {
+        padding: 2.4vmax;
+    }
+
+    #work-sample .card .tag {
+        font-size: 1.7vmax;
+    }
+
+    #work-sample .card h3 {
+        font-size: 3vmax;
+    }
+
+    #work-sample .card p {
+        font-size: 2vmax;
+    }
+
+    #work-sample .card .stack span {
+        font-size: 1.6vmax;
+    }
+
+    #page4 > a.more-link {
+        margin-bottom: 1vmax;
+    }
+
+}
+
+
+
+/* ----page6 code---- */
+
+
+
+
+#page6 {
+    background-color: #222;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 4.5vh 4.2vw;
+}
+
+#page6 h1 {
+    font-size: 4.6vmax;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    margin-top: 1vmax;
+    margin-bottom: 3.5vmax;
+}
+
+#page6 h1 span {
+    color: #F6BA53;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+}
+
+#artworks a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    height: 72px;
+    border-top: 2px solid #fff;
+    padding: 0 3px;
+}
+
+#artworks a:nth-last-child(1) {
+    border-bottom: 2px solid #fff;
+    margin-bottom: 5vmax;
+}
+
+#artworks a h4 {
+    font-size: 1.7vmax;
+    position: relative;
+    z-index: 99;
+    -webkit-transition: color ease-in 0.4s;
+    -o-transition: color ease-in 0.4s;
+    transition: color ease-in 0.4s;
+    width: 15%;
+}
+
+#artworks a h5 {
+    font-size: 1.8vmax;
+    font-weight: 600;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    width: 34%;
+    position: relative;
+    -webkit-transition: color ease-in 0.4s;
+    -o-transition: color ease-in 0.4s;
+    transition: color ease-in 0.4s;
+    z-index: 99;
+}
+
+#artworks a h6 {
+    font-size: 1.6vmax;
+    width: 34%;
+    text-align: right;
+    position: relative;
+    z-index: 99;
+    -webkit-transition: color ease-in 0.4s;
+    -o-transition: color ease-in 0.4s;
+    transition: color ease-in 0.4s;
+}
+
+.sliding-div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 9;
+    width: 0%;
+    -webkit-transition: width cubic-bezier(0.19, 1, 0.22, 1) 1.3s;
+    -o-transition: width cubic-bezier(0.19, 1, 0.22, 1) 1.3s;
+    transition: width cubic-bezier(0.19, 1, 0.22, 1) 1.3s;
+    background-color: #fff;
+}
+
+
+#artworks a:hover .sliding-div {
+    width: 100%;
+}
+
+#artworks a:hover h4,
+#artworks a:hover h5,
+#artworks a:hover h6 {
+    color: #222;
+}
+
+
+
+
+/* ----page6 responsive---- */
+
+
+
+@media (max-width:600px) {
+    #page6 {
+        padding: 4.5vh 4.7vw;
+    }
+
+    #page6 h1 {
+        font-size: 4vmax;
+        margin-top: 0vmax;
+        margin-bottom: 5vmax;
+    }
+
+    #artworks a {
+        height: 60px;
+        padding: 0 2px;
+    }
+
+    #artworks a h4 {
+        font-size: 2.1vmax;
+        width: 22%;
+    }
+
+    #artworks a h5 {
+        font-size: 2vmax;
+        width: 38%;
+    }
+
+    #artworks a h6 {
+        font-size: 1.7vmax;
+        width: 32%;
+        font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    }
+
+}
+
+
+
+/* -------page5--------------- */
+
+.page5 {
+    width: 100%;
+    height: 100vh;
+    padding: 0 2vmax;
+    margin-top: 0vh;
+    background-color: rgb(48, 48, 48);
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.page5 > h1 {
+    font: 700 9vmax "Gilroy", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 900;
+    line-height: 1.2;
+    word-spacing: -3px;
+    letter-spacing: -2px;
+}
+
+.mail {
+    color: #FC626A;
+}
+
+.instagram {
+    color: #F6BA53;
+}
+
+.linkedin {
+    color: #51CDE7;
+}
+
+.mail a,
+.instagram a,
+.linkedin a {
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+}
+
+footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 2.2vmax 0;
+    font-family: Gilroy, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.8vmax;
+}
+
+/* ----------------- for all----------------- */
+a {
+    color: inherit !important;
+    text-decoration: none;
+    -webkit-transition: .5s all;
+    -o-transition: .5s all;
+    transition: .5s all;
+}
+
+.page5 a:hover {
+    text-decoration: line-through;
+}
+
+@media (max-width:600px) {
+    .page5 > h1 {
+        font-size: 8.4vmax;
+    }
+
+    footer {
+        font-size: 2vmax;
+        margin-top: 10vmax;
+    }
+}
