@@ -1,268 +1,599 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-motion="on">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta property="og:title" content="Mihir Upadhyay | Portfolio" />
-    <meta property="og:description"
-        content="Mihir Upadhyay. Embedded systems, FPGA and robotics. ICT undergraduate at PDEU." />
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/169142515?v=4" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mihir-upadhyay.github.io/portfolio/" />
+    <title>Mihir Upadhyay | Portfolio</title>
     <meta name="description"
-        content="Portfolio of Mihir Upadhyay - ICT undergraduate at Pandit Deendayal Energy University building embedded systems, FPGA designs, PCBs and robots.">
+        content="Mihir Upadhyay - ICT undergraduate at Pandit Deendayal Energy University building embedded systems, FPGA designs, PCBs and robots.">
     <meta name="keywords"
         content="Mihir Upadhyay, Portfolio, Embedded Systems, FPGA, Verilog, ESP32, Robotics, PCB, Gandhinagar, India">
     <meta name="author" content="Mihir Upadhyay">
     <meta name="robots" content="index, follow">
-    <title>Mihir Upadhyay | Portfolio</title>
+    <meta name="theme-color" content="#050505">
+    <meta property="og:title" content="Mihir Upadhyay | Portfolio" />
+    <meta property="og:description"
+        content="Embedded systems, FPGA and robotics. I design digital logic, write firmware and build robots." />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/169142515?v=4" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mihir-upadhyay.github.io/portfolio/" />
     <link rel="canonical" href="https://mihir-upadhyay.github.io/portfolio/" />
     <link rel="icon" href="https://avatars.githubusercontent.com/u/169142515?s=64&v=4" type="image/png" />
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Instrument+Serif:ital@0;1&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
 </head>
 
 <body>
-    <nav role="navigation">
-        <a href="#">Mihir Upadhyay</a>
-        <svg class="nav-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62" aria-hidden="true">
-            <g fill="white" fill-rule="nonzero">
-                <path
-                    d="M31 .5C14.155.5.5 14.155.5 31S14.155 61.5 31 61.5 61.5 47.845 61.5 31 47.845.5 31 .5zm0 1c16.292 0 29.5 13.208 29.5 29.5S47.292 60.5 31 60.5 1.5 47.292 1.5 31 14.708 1.5 31 1.5z">
-                </path>
-                <path d="M16 31h26.5l-9.5-9.5 2-2 13 13-13 13-2-2 9.5-9.5H16z"></path>
-            </g>
-        </svg>
-        <button class="resume-btn">
-            <a style="text-decoration: initial;" href="https://github.com/Mihir-upadhyay" target="_blank"
-                rel="noopener noreferrer">see my github</a>
-        </button>
-        <button class="resume-btn-prt">
-            <a style="text-decoration: initial;" href="https://github.com/Mihir-upadhyay" target="_blank"
-                rel="noopener noreferrer">github</a>
-        </button>
-    </nav>
+    <!-- icon sprite + arrow marker for diagrams -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0 0L8 4L0 8z" fill="#e8774e" />
+            </marker>
+        </defs>
+        <symbol id="i-arrow" viewBox="0 0 12 12">
+            <path d="M3 9L9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-down" viewBox="0 0 12 12">
+            <path d="M6 2v8M2.5 6.5L6 10l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+        <symbol id="i-up" viewBox="0 0 12 12">
+            <path d="M6 10V2M2.5 5.5L6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+    </svg>
+
+    <div id="progress" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+        <a class="brand" href="#top">Mihir Upadhyay</a>
+        <nav class="links" aria-label="Primary">
+            <a href="#work" data-spy="work">Work</a>
+            <a href="#about" data-spy="about">About</a>
+            <a href="#process" data-spy="process">Process</a>
+            <a href="#journey" data-spy="journey">Journey</a>
+        </nav>
+        <a class="btn-talk" href="#contact">Let’s talk <svg class="i"><use href="#i-arrow" /></svg></a>
+    </header>
+
     <main>
-        <section data-scroll-section id="page1">
-            <h1>Who is</h1>
-            <div id="image-div">
-                <img src="https://avatars.githubusercontent.com/u/169142515?v=4" alt="Mihir Upadhyay">
+        <!-- ========== HERO ========== -->
+        <section class="hero" id="top">
+            <div class="hero-meta">
+                <span class="eyebrow"><i class="sq"></i>Engineer. Builder. Tinkerer.</span>
+                <span class="eyebrow">Based in Gandhinagar · Building in hardware</span>
             </div>
-        </section>
-        <section data-scroll-section id="page2">
-            <div id="name-div">
-                <h1>Mihir Upadhyay ? </h1>
-                <h1>Mihir Upadhyay ? </h1>
-                <h1>Mihir Upadhyay ? </h1>
-            </div>
-            <div id="intro-div">
-                <h1>Hi!</h1>
-                <h1>I’m Mihir, an <span class="a">ICT undergraduate</span> at <span class="a">Pandit Deendayal Energy
-                        University</span> who loves turning ideas into working hardware and
-                    firmware.</h1>
-                <br>
-                <h1>I build <span class="a">robots</span>, <span class="b">FPGA designs</span> and
-                    <span class="a">IoT systems</span> — from custom ESP32 boards and Verilog state machines to
-                    wirelessly controlled walking robots.
-                </h1>
-                <br>
-                <h1>Based in <span class="b">Gandhinagar</span>, I like projects where RTL, PCBs, microcontrollers and
-                    code all have to work together on a real <a target="_blank" rel="noopener noreferrer"
-                        href="https://github.com/Mihir-upadhyay">bench</a>.
-                </h1>
 
-                <div id="prof">
-                    <a target="_blank" rel="noopener noreferrer"
-                        href="https://www.linkedin.com/in/mihir-upadhyay-0209962a1/" class="pill-link">say hi</a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/Mihir-upadhyay"
-                        class="pill-link alt">github</a>
-                </div>
+            <div class="hero-side eyebrow" aria-hidden="true">
+                <span class="accent">01 / Presence</span>
+                <b>+</b>
+                <span>Embedded systems<br>FPGA &amp; RTL<br>Robotics</span>
+            </div>
 
+            <div class="portrait" id="portrait">
+                <canvas aria-hidden="true"></canvas>
+                <img alt="Portrait of Mihir Upadhyay" hidden>
+            </div>
+
+            <div class="hero-title">
+                <p class="eyebrow center">A builder’s perspective on hardware</p>
+                <h1>Mihir <em>Upadhyay</em></h1>
+                <p class="lead">I design digital logic, write firmware, and build robots,<br class="d-only"> from custom
+                    PCBs to walking quadrupeds.</p>
+                <div class="cta-row">
+                    <a class="pill" href="#work">Explore my work <svg class="i"><use href="#i-down" /></svg></a>
+                    <a class="ulink" href="mailto:mihirupadhyay7788@gmail.com">Start a conversation <svg
+                            class="i"><use href="#i-arrow" /></svg></a>
+                </div>
+            </div>
+
+            <div class="hero-foot eyebrow">
+                <span class="scroll"><i class="bar"></i>Scroll to discover <svg class="i"><use
+                            href="#i-down" /></svg></span>
+                <span class="hide-s">On GitHub since 2024</span>
+                <a href="https://github.com/Mihir-upadhyay" target="_blank" rel="noopener noreferrer">An ongoing
+                    exploration <svg class="i"><use href="#i-arrow" /></svg></a>
             </div>
         </section>
-        <section data-scroll-section id="page3">
-            <h3>Things I'm <span>good</span> at</h3>
-            <h5>skills, interests, passion and hobbies</h5>
-            <div class="box dev-box">
-                <h4>embedded &amp; firmware</h4>
-                <div class="elem-div">
-                    <span class="chip">ESP32</span>
-                    <span class="chip">ESP8266</span>
-                    <span class="chip">Arduino</span>
-                    <span class="chip">Raspberry Pi</span>
-                    <span class="chip">Jetson</span>
-                    <span class="chip">ESP-NOW</span>
-                    <span class="chip">MQTT</span>
-                    <span class="chip">I²C</span>
-                    <span class="chip">PWM / Servos</span>
-                    <span class="chip">C++</span>
+
+        <!-- ========== STATS ========== -->
+        <section class="stats" aria-label="Highlights">
+            <div class="stat">
+                <div class="num"><span class="count" data-to="8" data-dec="0">8</span><span class="plus">DOF</span>
                 </div>
+                <p>quadruped robot, built end to end</p>
             </div>
-            <div class="box des-box">
-                <h4>fpga &amp; digital design</h4>
-                <div class="elem-div">
-                    <span class="chip">Verilog</span>
-                    <span class="chip">SystemVerilog</span>
-                    <span class="chip">Xilinx Artix-7</span>
-                    <span class="chip">Vivado</span>
-                    <span class="chip">Tcl</span>
-                    <span class="chip">Testbenches</span>
-                    <span class="chip">Logisim</span>
-                </div>
+            <div class="stat">
+                <div class="num"><span class="count" data-to="3.2" data-dec="1">3.2</span><span
+                        class="plus">ms</span></div>
+                <p>ESP-NOW control latency on the robot</p>
             </div>
-            <div class="box pcb-box">
-                <h4>pcb &amp; hardware</h4>
-                <div class="elem-div">
-                    <span class="chip">Custom PCB design</span>
-                    <span class="chip">Sensors</span>
-                    <span class="chip">Power rails</span>
-                    <span class="chip">Circuit simulation</span>
-                    <span class="chip">Prototyping</span>
-                </div>
+            <div class="stat">
+                <div class="num"><span class="count" data-to="42" data-dec="0">42</span><span
+                        class="plus">min</span></div>
+                <p>battery runtime on a 2S Li-Po</p>
             </div>
-        </section>
-        <section data-scroll-section id="page4">
-            <h2>built with <span>solder</span> &amp; code.</h2>
-            <h4>these are few of my recent works</h4>
-            <div id="work-sample">
-                <a class="card" target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/HYDROPONICS">
-                    <span class="tag">IoT · PCB</span>
-                    <h3>Autonomous Hydroponics</h3>
-                    <p>A closed-loop growing system: sensors feed a custom ESP32 PCB, which talks over MQTT to a
-                        Raspberry Pi / Jetson platform that drives the actuators.</p>
-                    <div class="stack"><span>ESP32</span><span>MQTT</span><span>Raspberry Pi</span><span>Jetson</span>
-                    </div>
-                </a>
-                <a class="card" target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/8-DOF-quadrabot-using-ESP32">
-                    <span class="tag">Robotics</span>
-                    <h3>8-DOF Quadruped Robot</h3>
-                    <p>A battery-powered four-legged robot with a crawl-gait engine on an ESP32, a PCA9685 servo
-                        driver and a handheld joystick controller over ESP-NOW (about 3.2 ms latency, 42 min
-                        runtime).</p>
-                    <div class="stack"><span>ESP32</span><span>ESP-NOW</span><span>PCA9685</span><span>C++</span></div>
-                </a>
-                <a class="card" target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/Artix-7-door-lock-SystemVerilog-FPGA-">
-                    <span class="tag">FPGA</span>
-                    <h3>FPGA Password Door Lock</h3>
-                    <p>A 3-bit password lock on the Nexys A7-100T with three attempts, a timed lockout, debounced
-                        buttons, seven-segment status text and a self-checking testbench.</p>
-                    <div class="stack"><span>Verilog</span><span>Vivado</span><span>Artix-7</span></div>
-                </a>
-                <a class="card" target="_blank" rel="noopener noreferrer"
-                    href="https://mihir-upadhyay.github.io/hardware-lab/">
-                    <span class="tag">3D · Web</span>
-                    <h3>Hardware Lab</h3>
-                    <p>An interactive gallery where you can inspect boards and sensors in 3D — Raspberry Pi 5,
-                        Jetson Nano, Arduino, ESP32-S3, ultrasonic, PIR, gas and more.</p>
-                    <div class="stack"><span>3D models</span><span>Web</span></div>
-                </a>
-                <a class="card" target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/16-bit-ALU-on-Logisim">
-                    <span class="tag">Digital Logic</span>
-                    <h3>16-bit ALU</h3>
-                    <p>A 16-bit arithmetic logic unit designed and simulated in Logisim.</p>
-                    <div class="stack"><span>Logisim</span><span>Digital design</span></div>
-                </a>
-                <a class="card" target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/Arduino-Shield">
-                    <span class="tag">Hardware</span>
-                    <h3>Arduino Shield</h3>
-                    <p>A custom shield that plugs onto an Arduino board.</p>
-                    <div class="stack"><span>Arduino</span><span>PCB</span></div>
-                </a>
-            </div>
-            <a class="more-link" target="_blank" rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/mihir-upadhyay-0209962a1/">
-                <span class="pill-link">see more on linkedIn</span>
+            <a class="stat stat-link" href="#work">
+                <p class="eyebrow">The builds.<br>Real hardware, real tests.</p>
+                <svg class="i"><use href="#i-arrow" /></svg>
             </a>
         </section>
-        <section data-scroll-section id="page6">
-            <h1>watch my <span>more</span> work.</h1>
-            <div id="artworks">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Mihir-upadhyay/HYDROPONICS">
-                    <h4>IoT</h4>
-                    <h5>Hydroponics</h5>
-                    <h6>ESP32 · MQTT · PCB</h6>
-                    <div class="sliding-div"></div>
+
+        <!-- ========== 01 ABOUT ========== -->
+        <section class="section" id="about">
+            <div class="section-head eyebrow">
+                <span><i class="sq"></i>01 / The person behind the work</span>
+                <span class="hide-s">A connected perspective</span>
+            </div>
+
+            <div class="about-grid">
+                <div class="viz-col reveal">
+                    <div class="viz-meta eyebrow">
+                        <span>Three disciplines. One perspective.</span>
+                        <span id="vizCount">01 / 03</span>
+                    </div>
+                    <div class="viz-stage">
+                        <canvas id="viz" aria-hidden="true"></canvas>
+                        <span class="viz-cap eyebrow" id="vizCap">Structure</span>
+                    </div>
+                    <div class="tabs" role="tablist" aria-label="Disciplines">
+                        <button class="tab is-on" role="tab" aria-selected="true" data-i="0">Design <svg
+                                class="i"><use href="#i-arrow" /></svg></button>
+                        <button class="tab" role="tab" aria-selected="false" data-i="1">Build <svg
+                                class="i"><use href="#i-arrow" /></svg></button>
+                        <button class="tab" role="tab" aria-selected="false" data-i="2">Connect <svg
+                                class="i"><use href="#i-arrow" /></svg></button>
+                    </div>
+                    <div class="tab-panel" id="tabPanel" role="tabpanel">
+                        <h3 id="tpTitle">Give logic a shape.</h3>
+                        <p id="tpText">State machines, debounced inputs and testbenches on a Xilinx Artix-7, designed in
+                            simulation and then run on a real board.</p>
+                        <a class="ulink sm" id="tpLink" href="#work-fpga"><span>Explore the FPGA work</span> <svg
+                                class="i"><use href="#i-arrow" /></svg></a>
+                    </div>
+                </div>
+
+                <div class="about-copy reveal">
+                    <h2 class="display">Circuits are the starting point.<br><em>Working systems are the point.</em>
+                    </h2>
+                    <p class="body-lg">I connect digital logic, firmware and hardware.</p>
+                    <p class="body-sm">I’m an ICT undergraduate at <b>Pandit Deendayal Energy University</b> in
+                        Gandhinagar, building across <b>RTL, embedded systems and robotics</b>, from FPGA state
+                        machines to wirelessly controlled walking robots.</p>
+                    <a class="ulink sm" href="#journey">Read my story <svg class="i"><use href="#i-arrow" /></svg></a>
+                    <p class="eyebrow tags">RTL mind. &nbsp; Builder’s instinct. &nbsp; Tinkerer’s ambition.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 02 WORK ========== -->
+        <section class="section" id="work">
+            <div class="section-head eyebrow">
+                <span><i class="sq"></i>02 / Selected work</span>
+                <span class="hide-s">Real hardware. Real tests.</span>
+            </div>
+
+            <div class="work-intro reveal">
+                <h2 class="display xl">Ideas are a start.<br><em>This is the work.</em></h2>
+                <p class="body-sm">From custom PCBs to walking robots.<br>A few things I’ve built and tested.</p>
+            </div>
+
+            <!-- 01 hydroponics -->
+            <article class="project reveal" id="work-iot">
+                <div class="frame">
+                    <div class="frame-bar"><i></i><i></i><i></i><span>hydroponics / system.arch</span></div>
+                    <svg class="diagram" viewBox="0 0 480 250" role="img"
+                        aria-label="Block diagram: sensors to ESP32 PCB to Raspberry Pi or Jetson MQTT hub to actuators, with a feedback loop">
+                        <g class="node">
+                            <rect x="12" y="70" width="96" height="64" rx="6" />
+                            <rect x="132" y="70" width="96" height="64" rx="6" />
+                            <rect x="252" y="70" width="96" height="64" rx="6" />
+                            <rect x="372" y="70" width="96" height="64" rx="6" />
+                        </g>
+                        <g class="nt">
+                            <text x="60" y="99" text-anchor="middle" class="h">SENSORS</text>
+                            <text x="60" y="117" text-anchor="middle">pH · EC</text>
+                            <text x="180" y="99" text-anchor="middle" class="h">ESP32 PCB</text>
+                            <text x="180" y="117" text-anchor="middle">custom board</text>
+                            <text x="300" y="99" text-anchor="middle" class="h">PI / JETSON</text>
+                            <text x="300" y="117" text-anchor="middle">MQTT hub</text>
+                            <text x="420" y="99" text-anchor="middle" class="h">ACTUATORS</text>
+                            <text x="420" y="117" text-anchor="middle">outputs</text>
+                        </g>
+                        <g class="wire">
+                            <path d="M108 102H130" marker-end="url(#ah)" />
+                            <path d="M228 102H250" marker-end="url(#ah)" />
+                            <path d="M348 102H370" marker-end="url(#ah)" />
+                            <path class="dash" d="M420 134V204H60V136" marker-end="url(#ah)" />
+                        </g>
+                        <text x="240" y="222" text-anchor="middle" class="nt cap">CLOSED FEEDBACK LOOP</text>
+                    </svg>
+                    <span class="frame-go"><svg class="i"><use href="#i-arrow" /></svg></span>
+                    <span class="frame-cap eyebrow">Closed-loop IoT system</span>
+                </div>
+                <div class="project-copy">
+                    <div class="eyebrow"><span class="accent">01</span> &nbsp; IoT &amp; PCB</div>
+                    <h3>Autonomous Hydroponics System</h3>
+                    <p>A closed-loop growing platform: sensors feed a custom ESP32 PCB, which talks over MQTT to a
+                        Raspberry Pi / Jetson that drives the actuators.</p>
+                    <p class="stack eyebrow">ESP32 · PCB · MQTT · Raspberry Pi · Jetson</p>
+                    <a class="ulink sm" href="https://github.com/Mihir-upadhyay/HYDROPONICS" target="_blank"
+                        rel="noopener noreferrer">Explore the build <svg class="i"><use href="#i-arrow" /></svg></a>
+                </div>
+            </article>
+
+            <!-- 02 quadruped -->
+            <article class="project flip reveal" id="work-robot">
+                <div class="frame">
+                    <div class="frame-bar"><i></i><i></i><i></i><span>quadbot / control.arch</span></div>
+                    <svg class="diagram" viewBox="0 0 480 250" role="img"
+                        aria-label="Block diagram: joystick on NodeMCU sends ESP-NOW to ESP32 gait engine, then PCA9685, then 8 servos">
+                        <g class="node">
+                            <rect x="12" y="80" width="96" height="64" rx="6" />
+                            <rect x="132" y="80" width="96" height="64" rx="6" />
+                            <rect x="252" y="80" width="96" height="64" rx="6" />
+                            <rect x="372" y="80" width="96" height="64" rx="6" />
+                        </g>
+                        <g class="nt">
+                            <text x="60" y="109" text-anchor="middle" class="h">JOYSTICK</text>
+                            <text x="60" y="127" text-anchor="middle">NodeMCU</text>
+                            <text x="180" y="109" text-anchor="middle" class="h">ESP32</text>
+                            <text x="180" y="127" text-anchor="middle">gait engine</text>
+                            <text x="300" y="109" text-anchor="middle" class="h">PCA9685</text>
+                            <text x="300" y="127" text-anchor="middle">I²C · PWM</text>
+                            <text x="420" y="109" text-anchor="middle" class="h">8 SERVOS</text>
+                            <text x="420" y="127" text-anchor="middle">2 DOF × 4 legs</text>
+                            <text x="120" y="66" text-anchor="middle" class="acc">ESP-NOW · 3.2 ms</text>
+                        </g>
+                        <g class="wire">
+                            <path d="M108 112H130" marker-end="url(#ah)" />
+                            <path d="M228 112H250" marker-end="url(#ah)" />
+                            <path d="M348 112H370" marker-end="url(#ah)" />
+                        </g>
+                        <g class="legs">
+                            <circle cx="120" cy="190" r="4" /><circle cx="150" cy="190" r="4" /><circle cx="180"
+                                cy="190" r="4" /><circle cx="210" cy="190" r="4" />
+                            <circle cx="240" cy="190" r="4" /><circle cx="270" cy="190" r="4" /><circle cx="300"
+                                cy="190" r="4" /><circle cx="330" cy="190" r="4" />
+                        </g>
+                        <text x="240" y="220" text-anchor="middle" class="nt cap">CH 0–7 · 50 HZ · CRAWL GAIT</text>
+                    </svg>
+                    <span class="frame-go"><svg class="i"><use href="#i-arrow" /></svg></span>
+                    <span class="frame-cap eyebrow">Wireless robotics &amp; firmware</span>
+                </div>
+                <div class="project-copy">
+                    <div class="eyebrow"><span class="accent">02</span> &nbsp; Robotics &amp; firmware</div>
+                    <h3>8-DOF Quadruped Robot</h3>
+                    <p>A battery-powered four-legged robot with a crawl-gait engine on an ESP32, a PCA9685 servo driver
+                        and a handheld joystick over ESP-NOW. About 3.2 ms latency and 42 minutes of runtime.</p>
+                    <p class="stack eyebrow">ESP32 · ESP-NOW · PCA9685 · C++ · Inverse kinematics</p>
+                    <a class="ulink sm" href="https://github.com/Mihir-upadhyay/8-DOF-quadrabot-using-ESP32"
+                        target="_blank" rel="noopener noreferrer">Explore the robot <svg class="i"><use
+                                href="#i-arrow" /></svg></a>
+                </div>
+            </article>
+
+            <!-- 03 FPGA -->
+            <article class="project reveal" id="work-fpga">
+                <div class="frame">
+                    <div class="frame-bar"><i></i><i></i><i></i><span>door_lock / fsm.v</span></div>
+                    <svg class="diagram" viewBox="0 0 480 250" role="img"
+                        aria-label="State machine: idle, check, true, false, lock">
+                        <g class="wire">
+                            <path d="M88 125H150" marker-end="url(#ah)" />
+                            <path d="M204 108L284 70" marker-end="url(#ah)" />
+                            <path d="M204 142L284 180" marker-end="url(#ah)" />
+                            <path d="M338 190H390" marker-end="url(#ah)" />
+                            <path class="dash" d="M310 32C310 4 60 4 60 95" marker-end="url(#ah)" />
+                            <path class="dash" d="M420 218C420 246 60 246 60 155" marker-end="url(#ah)" />
+                        </g>
+                        <g class="node">
+                            <circle cx="60" cy="125" r="28" />
+                            <circle cx="180" cy="125" r="28" />
+                            <circle cx="310" cy="60" r="28" />
+                            <circle cx="310" cy="190" r="28" />
+                            <circle cx="420" cy="190" r="28" />
+                        </g>
+                        <g class="nt">
+                            <text x="60" y="128" text-anchor="middle" class="h">IDLE</text>
+                            <text x="180" y="128" text-anchor="middle" class="h">CHECK</text>
+                            <text x="310" y="63" text-anchor="middle" class="h">TRUE</text>
+                            <text x="310" y="193" text-anchor="middle" class="h">FALSE</text>
+                            <text x="420" y="193" text-anchor="middle" class="h">LOCK</text>
+                            <text x="119" y="116" text-anchor="middle">BTNC</text>
+                            <text x="366" y="180" text-anchor="middle" class="acc">3rd wrong</text>
+                            <text x="240" y="238" text-anchor="middle" class="cap">5 s LOCKOUT</text>
+                        </g>
+                    </svg>
+                    <span class="frame-go"><svg class="i"><use href="#i-arrow" /></svg></span>
+                    <span class="frame-cap eyebrow">FPGA · Nexys A7-100T</span>
+                </div>
+                <div class="project-copy">
+                    <div class="eyebrow"><span class="accent">03</span> &nbsp; FPGA &amp; RTL</div>
+                    <h3>Artix-7 Password Door Lock</h3>
+                    <p>A 3-bit password lock for the Nexys A7-100T: three attempts, a timed lockout, debounced
+                        buttons, seven-segment status text and a self-checking testbench.</p>
+                    <p class="stack eyebrow">Verilog · Vivado · Artix-7 · Testbench</p>
+                    <a class="ulink sm" href="https://github.com/Mihir-upadhyay/Artix-7-door-lock-SystemVerilog-FPGA-"
+                        target="_blank" rel="noopener noreferrer">Explore the design <svg class="i"><use
+                                href="#i-arrow" /></svg></a>
+                </div>
+            </article>
+
+            <!-- more cards -->
+            <div class="cards reveal">
+                <a class="card" href="https://mihir-upadhyay.github.io/hardware-lab/" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="eyebrow">Interactive · 3D</span>
+                    <h4>Hardware Lab</h4>
+                    <p>Inspect boards and sensors in 3D: Raspberry Pi 5, Jetson Nano, Arduino, ESP32-S3 and more.</p>
+                    <span class="ulink sm">Open the lab <svg class="i"><use href="#i-arrow" /></svg></span>
                 </a>
-                <a target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/8-DOF-quadrabot-using-ESP32">
-                    <h4>Robotics</h4>
-                    <h5>8-DOF Quadruped</h5>
-                    <h6>ESP32 · ESP-NOW</h6>
-                    <div class="sliding-div"></div>
+                <a class="card" href="https://github.com/Mihir-upadhyay/16-bit-ALU-on-Logisim" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="eyebrow">Digital logic</span>
+                    <h4>16-bit ALU</h4>
+                    <p>A 16-bit arithmetic logic unit designed and simulated in Logisim.</p>
+                    <span class="ulink sm">View the design <svg class="i"><use href="#i-arrow" /></svg></span>
                 </a>
-                <a target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/Artix-7-door-lock-SystemVerilog-FPGA-">
-                    <h4>FPGA</h4>
-                    <h5>Artix-7 Door Lock</h5>
-                    <h6>Verilog · Vivado</h6>
-                    <div class="sliding-div"></div>
+                <a class="card" href="https://github.com/Mihir-upadhyay/Arduino-Shield" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="eyebrow">Hardware</span>
+                    <h4>Arduino Shield</h4>
+                    <p>A custom shield that plugs onto an Arduino board.</p>
+                    <span class="ulink sm">View the project <svg class="i"><use href="#i-arrow" /></svg></span>
                 </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://mihir-upadhyay.github.io/hardware-lab/">
-                    <h4>3D</h4>
-                    <h5>Hardware Lab</h5>
-                    <h6>Interactive Boards</h6>
-                    <div class="sliding-div"></div>
+            </div>
+
+            <!-- low-priority work -->
+            <div class="also reveal">
+                <span class="eyebrow">Also on the bench</span>
+                <a href="https://github.com/Mihir-upadhyay/Dual-band-slotted-monopole-antenna" target="_blank"
+                    rel="noopener noreferrer"><span class="eyebrow">RF</span> Dual-band slotted monopole antenna <svg
+                        class="i"><use href="#i-arrow" /></svg></a>
+                <a href="https://github.com/Mihir-upadhyay/Speech-to-text-to-speech-editor" target="_blank"
+                    rel="noopener noreferrer"><span class="eyebrow">MATLAB</span> Speech-to-text-to-speech editor <svg
+                        class="i"><use href="#i-arrow" /></svg></a>
+            </div>
+        </section>
+
+        <!-- ========== 03 PROCESS ========== -->
+        <section class="section" id="process">
+            <div class="section-head eyebrow">
+                <span><i class="sq"></i>03 / How I think &amp; work</span>
+                <span class="hide-s">Depth meets perspective</span>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-left reveal">
+                    <h2 class="display">How I work.<br><em>From idea to impact.</em></h2>
+                    <p class="body-sm">Choose a discipline. Follow the thinking.</p>
+                    <p class="eyebrow steps-label">From spec to signal</p>
+                    <ol class="steps">
+                        <li><span class="n">01</span> Understand the need</li>
+                        <li><span class="n">02</span> Simulate before you solder</li>
+                        <li><span class="n">03</span> Build and wire it</li>
+                        <li><span class="n">04</span> Test on the bench</li>
+                    </ol>
+                </div>
+
+                <div class="acc reveal" id="acc">
+                    <div class="acc-item is-open">
+                        <button class="acc-head" aria-expanded="true">
+                            <span class="eyebrow">01 / FPGA &amp; digital design</span>
+                            <span class="acc-title">Design with precision.</span>
+                            <span class="acc-ico" aria-hidden="true"></span>
+                        </button>
+                        <div class="acc-body">
+                            <div>
+                                <p>State machines, debounced inputs and self-checking testbenches, simulated first and
+                                    then run on a Nexys A7 board.</p>
+                                <p class="tag-row">Verilog · SystemVerilog · Vivado · Testbenches · Logisim</p>
+                                <a class="ulink sm" href="#work-fpga">See the door lock <svg class="i"><use
+                                            href="#i-arrow" /></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acc-item">
+                        <button class="acc-head" aria-expanded="false">
+                            <span class="eyebrow">02 / Embedded &amp; robotics</span>
+                            <span class="acc-title">Make it move.</span>
+                            <span class="acc-ico" aria-hidden="true"></span>
+                        </button>
+                        <div class="acc-body">
+                            <div>
+                                <p>Gait engines, servo drivers and wireless control on ESP32 and ESP8266, with power
+                                    rails and wiring documented.</p>
+                                <p class="tag-row">ESP32 · ESP-NOW · PCA9685 · C++ · I²C</p>
+                                <a class="ulink sm" href="#work-robot">See the quadruped <svg class="i"><use
+                                            href="#i-arrow" /></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acc-item">
+                        <button class="acc-head" aria-expanded="false">
+                            <span class="eyebrow">03 / IoT &amp; PCB</span>
+                            <span class="acc-title">Close the loop.</span>
+                            <span class="acc-ico" aria-hidden="true"></span>
+                        </button>
+                        <div class="acc-body">
+                            <div>
+                                <p>Sensors, a custom ESP32 PCB and an MQTT platform on Raspberry Pi / Jetson, so the
+                                    system can sense, decide and act.</p>
+                                <p class="tag-row">PCB · MQTT · Raspberry Pi · Jetson · Sensors</p>
+                                <a class="ulink sm" href="#work-iot">See the hydroponics system <svg class="i"><use
+                                            href="#i-arrow" /></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 04 IMPACT ========== -->
+        <section class="section" id="impact">
+            <div class="section-head eyebrow">
+                <span><i class="sq"></i>04 / The builds, measured</span>
+                <span class="hide-s">Specs. Tests. Results.</span>
+            </div>
+
+            <div class="work-intro reveal">
+                <h2 class="display xl">Small budget.<br><em>Big behaviour.</em></h2>
+                <p class="body-sm">Every build gets tested on the bench, with numbers to show for it.</p>
+            </div>
+
+            <div class="big reveal">
+                <div class="big-num">₹<span class="count" data-to="2605" data-dec="0" data-comma="1">2,605</span><span
+                        class="plus">+</span></div>
+                <div class="big-copy">
+                    <h3>Estimated cost.<br>One walking robot.</h3>
+                    <p class="body-sm">Parts, battery and chassis for the 8-DOF quadruped, with the full bill of
+                        materials in its engineering report.</p>
+                    <a class="ulink sm" href="https://github.com/Mihir-upadhyay/8-DOF-quadrabot-using-ESP32"
+                        target="_blank" rel="noopener noreferrer">The report behind the number <svg class="i"><use
+                                href="#i-arrow" /></svg></a>
+                </div>
+            </div>
+
+            <div class="metrics reveal">
+                <div>
+                    <div class="num sm"><span class="count" data-to="6" data-dec="0">6</span><span class="plus">cm/s</span>
+                    </div>
+                    <p>Top crawl-gait speed on the quadruped</p>
+                </div>
+                <div>
+                    <div class="num sm"><span class="count" data-to="8" data-dec="0">8</span><span class="plus">m</span>
+                    </div>
+                    <p>Reliable wireless range with ESP-NOW</p>
+                </div>
+                <div>
+                    <div class="num sm"><span class="count" data-to="10" data-dec="0">10</span><span
+                            class="plus">/10</span></div>
+                    <p>Planned robot tests passed</p>
+                </div>
+            </div>
+
+            <div class="lab-head reveal">
+                <div>
+                    <p class="eyebrow">A shared bench. A living lab.</p>
+                    <h3 class="display md">Boards I work with,<br><em>in 3D.</em></h3>
+                </div>
+                <a class="ulink sm" href="https://mihir-upadhyay.github.io/hardware-lab/" target="_blank"
+                    rel="noopener noreferrer">Open the Hardware Lab <svg class="i"><use href="#i-arrow" /></svg></a>
+            </div>
+            <div class="lab reveal">
+                <a href="https://mihir-upadhyay.github.io/hardware-lab/#rpi5" target="_blank" rel="noopener noreferrer"
+                    class="lab-tile"><span class="eyebrow">Single-board computer</span>
+                    <h4>Raspberry Pi 5</h4><span class="ulink sm">Open in 3D <svg class="i"><use
+                                href="#i-arrow" /></svg></span></a>
+                <a href="https://mihir-upadhyay.github.io/hardware-lab/#jetson" target="_blank"
+                    rel="noopener noreferrer" class="lab-tile"><span class="eyebrow">Edge AI</span>
+                    <h4>Jetson Nano</h4><span class="ulink sm">Open in 3D <svg class="i"><use
+                                href="#i-arrow" /></svg></span></a>
+                <a href="https://mihir-upadhyay.github.io/hardware-lab/#esp32s3" target="_blank"
+                    rel="noopener noreferrer" class="lab-tile"><span class="eyebrow">Microcontroller</span>
+                    <h4>ESP32-S3</h4><span class="ulink sm">Open in 3D <svg class="i"><use
+                                href="#i-arrow" /></svg></span></a>
+                <a href="https://mihir-upadhyay.github.io/hardware-lab/#arduino" target="_blank"
+                    rel="noopener noreferrer" class="lab-tile"><span class="eyebrow">Microcontroller</span>
+                    <h4>Arduino Uno</h4><span class="ulink sm">Open in 3D <svg class="i"><use
+                                href="#i-arrow" /></svg></span></a>
+            </div>
+
+            <div class="social reveal">
+                <div class="social-intro">
+                    <p class="eyebrow">The conversation continues</p>
+                    <h3 class="display md">Different places.<br><em>The same curiosity.</em></h3>
+                </div>
+                <a class="social-card" href="https://github.com/Mihir-upadhyay" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="eyebrow">GitHub / @Mihir-upadhyay</span>
+                    <h4>Code, <em>in the open.</em></h4>
+                    <p>Firmware, RTL and hardware projects, all public.</p>
+                    <span class="ulink sm">Explore my GitHub <svg class="i"><use href="#i-arrow" /></svg></span>
                 </a>
-                <a target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/16-bit-ALU-on-Logisim">
-                    <h4>Logic</h4>
-                    <h5>16-bit ALU</h5>
-                    <h6>Logisim</h6>
-                    <div class="sliding-div"></div>
-                </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Mihir-upadhyay/Arduino-Shield">
-                    <h4>Hardware</h4>
-                    <h5>Arduino Shield</h5>
-                    <h6>Arduino</h6>
-                    <div class="sliding-div"></div>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/Dual-band-slotted-monopole-antenna">
-                    <h4>RF</h4>
-                    <h5>Slotted Monopole Antenna</h5>
-                    <h6>Dual-band</h6>
-                    <div class="sliding-div"></div>
-                </a>
-                <a target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/Mihir-upadhyay/Speech-to-text-to-speech-editor">
-                    <h4>MATLAB</h4>
-                    <h5>Speech Editor</h5>
-                    <h6>Speech-to-text-to-speech</h6>
-                    <div class="sliding-div"></div>
+                <a class="social-card" href="https://www.linkedin.com/in/mihir-upadhyay-0209962a1/" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="eyebrow">LinkedIn / Mihir Upadhyay</span>
+                    <h4>The thinking <em>behind the work.</em></h4>
+                    <p>Where I share projects and connect with other builders.</p>
+                    <span class="ulink sm">Connect on LinkedIn <svg class="i"><use href="#i-arrow" /></svg></span>
                 </a>
             </div>
         </section>
-        <section data-scroll-section class="page5">
-            <h1>you can get in touch <br>
-                with me via <span class="mail">
-                    <a target="_blank" rel="noopener noreferrer" href="mailto:mihirupadhyay7788@gmail.com">mail</a>
-                </span> or
-                <span class="instagram">
-                    <a target="_blank" hreflang="en" rel="noopener noreferrer"
-                        href="https://github.com/Mihir-upadhyay">github</a>
-                </span> or <span class="linkedin">
-                    <a target="_blank" hreflang="en" rel="noopener noreferrer"
-                        href="https://www.linkedin.com/in/mihir-upadhyay-0209962a1/">linkedIn</a></span>.
-            </h1>
-            <footer>
-                created with ❤️ by me
+
+        <!-- ========== INTERLUDE / JOURNEY ========== -->
+        <section class="section" id="journey">
+            <div class="section-head eyebrow">
+                <span><i class="sq"></i>Interlude / Still becoming</span>
+                <span class="hide-s">A journey in motion</span>
+            </div>
+            <div class="journey reveal">
+                <h2 class="display xl">Started with a circuit.<br><em>Kept asking why.</em></h2>
+                <ol class="timeline">
+                    <li>
+                        <span class="eyebrow">2024</span>
+                        <h4>Learning by building.</h4>
+                        <p>Joined GitHub and started putting projects online.</p>
+                    </li>
+                    <li>
+                        <span class="eyebrow">Today</span>
+                        <h4>Connecting the whole picture.</h4>
+                        <p>Studying ICT at Pandit Deendayal Energy University, and building FPGA designs, robots and IoT
+                            systems.</p>
+                    </li>
+                    <li>
+                        <span class="eyebrow">Next</span>
+                        <h4>Trot gaits, IMU feedback, ROS 2.</h4>
+                        <p>On the quadruped’s roadmap: a faster trot gait, tilt correction, obstacle avoidance and
+                            simulation in Gazebo or PyBullet.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section class="contact" id="contact">
+            <p class="eyebrow"><i class="sq"></i>Open to meaningful conversations</p>
+            <h2 class="display cta">Something great<br>starts with <em>a hello.</em></h2>
+            <a class="ulink lg" href="mailto:mihirupadhyay7788@gmail.com">Let’s connect <svg class="i"><use
+                        href="#i-arrow" /></svg></a>
+            <p class="body-sm">Robots, FPGA, IoT, collaborations.<br>If our worlds overlap, I’d love to hear from you.
+            </p>
+
+            <footer class="foot">
+                <div class="foot-row">
+                    <span class="brand">Mihir Upadhyay.</span>
+                    <nav class="foot-links" aria-label="Social">
+                        <a href="https://www.linkedin.com/in/mihir-upadhyay-0209962a1/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn <svg class="i"><use href="#i-arrow" /></svg></a>
+                        <a href="https://github.com/Mihir-upadhyay" target="_blank" rel="noopener noreferrer">GitHub
+                            <svg class="i"><use href="#i-arrow" /></svg></a>
+                        <a href="mailto:mihirupadhyay7788@gmail.com">Email <svg class="i"><use
+                                    href="#i-arrow" /></svg></a>
+                        <button class="to-top" id="toTop" aria-label="Back to top"><svg class="i"><use
+                                    href="#i-up" /></svg></button>
+                    </nav>
+                </div>
+                <div class="foot-meta eyebrow">
+                    <span>© 2026 Mihir Upadhyay</span>
+                    <span class="hide-s">Built with intent. Always evolving.</span>
+                    <span>Gandhinagar, India / The world</span>
+                </div>
             </footer>
         </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
-        integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
-        integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <button class="motion" id="motionBtn" aria-pressed="true"><i></i><span>Motion on</span></button>
+
     <script src="script.js"></script>
 </body>
 
